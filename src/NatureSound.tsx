@@ -15,15 +15,30 @@ import { HandPan } from "./components/HandPan";
 import { Nature } from "./components/Nature";
 import { Ocean } from "./components/Ocean";
 import { People } from "./components/People";
+import Typewriter from 'react-typewriter-effect';
+import { motion } from 'framer-motion';
+
+
 
 export const NatureSound = () => {
 
   return (
     <Flex className="flex flex-col h-screen">
       <Box className="flex flex-col justify-center items-center p-10">
-        <Text className="text-center pt-10 font-extrabold text-black text-4xl">
-          Nature Sounds and White Noise for Better Work
-        </Text>
+	  <Typewriter
+          textStyle={{  color: 'black', fontWeight: 700, fontSize: '2em' }}
+          startDelay={200}
+          cursorColor="white"
+          multiText={[
+            'Nature Sounds and White Noise for Better Work',
+            'Enhanced Productivity',
+            'Better Sleep Quality',
+            'Focus and Relaxation',
+          ]}
+          multiTextDelay={1500}
+          typeSpeed={40}
+          deleteSpeed={50}
+        />
       </Box>
       <Box className="flex flex-wrap items-center justify-center gap-7 h-full">
         <Rain />
