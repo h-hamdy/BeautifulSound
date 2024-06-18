@@ -16,7 +16,6 @@ import { Nature } from "./components/Nature";
 import { Ocean } from "./components/Ocean";
 import { People } from "./components/People";
 import Typewriter from 'react-typewriter-effect';
-import { motion } from 'framer-motion';
 
 
 
