@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
-import FireFile from "/src/audio/fire.mp4";
+import FireFile from "/src/audio/fire.mp3";
 import fire from "/src/assets/fire.png";
 
 export const Fire = () => {

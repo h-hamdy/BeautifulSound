@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
 import noise from "/src/assets/logo.png";
-import BrownFile from "/src/audio/brownNoise.mp4";
+import BrownFile from "/src/audio/brownNoise.mp3";
 
 export const BrownNoise = () => {
   const noiseAudioRef = useRef(new Audio(BrownFile));

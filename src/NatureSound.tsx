@@ -9,12 +9,13 @@ import github from "/src/assets/github.png";
 
 import { BrownNoise } from "./components/BrownNoise";
 import { Fire } from "./components/Fire";
-import { Children } from "./components/Children";
 import { HandPan } from "./components/HandPan";
 import { Nature } from "./components/Nature";
 import { Ocean } from "./components/Ocean";
 import { People } from "./components/People";
+
 import Typewriter from 'react-typewriter-effect';
+import { River } from "./components/River";
 
 
 
@@ -44,9 +45,9 @@ export const NatureSound = () => {
         <Fire />
         <HandPan />
         <People />
-        <Children />
         <Nature />
         <Ocean />
+		<River/>
       </Box>
       <Box className="w-full flex items-center justify-center">
         <a href="https://github.com/h-hamdy">

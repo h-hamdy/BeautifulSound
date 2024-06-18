@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
-import HandPanFile from "/src/audio/handpan.mp4";
+import HandPanFile from "/src/audio/handpan.mp3";
 import handpan from "/src/assets/handpan.png";
 
 export const HandPan = () => {

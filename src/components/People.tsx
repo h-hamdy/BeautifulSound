@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
 import people from "/src/assets/people.png";
-import PeopleFile from "/src/audio/People.mp4";
+import PeopleFile from "/src/audio/People.mp3";
 
 export const People = () => {
   const PeopleAudioRef = useRef(new Audio(PeopleFile));

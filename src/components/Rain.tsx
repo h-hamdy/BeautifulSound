@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
 import rain from "/src/assets/rain.png";
-import RainFile from "/src/audio/rain.mp4";
+import RainFile from "/src/audio/rain.mp3";
 
 export const Rain = () => {
   const rainAudioRef = useRef(new Audio(RainFile));

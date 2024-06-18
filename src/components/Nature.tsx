@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
-import natureFile from "/src/audio/nature.mp4";
+import natureFile from "/src/audio/nature.mp3";
 import nature from "/src/assets/nature.png";
 
 export const Nature = () => {
