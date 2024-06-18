@@ -1,7 +1,6 @@
 import {
   Box,
   Image,
-  Text,
   Flex,
 } from "@chakra-ui/react";
 import { Rain } from "./components/Rain";
