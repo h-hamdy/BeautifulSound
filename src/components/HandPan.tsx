@@ -15,8 +15,8 @@ import handpan from "/src/assets/handpan.png";
 export const HandPan = () => {
   const HandPanAudioRef = useRef(new Audio(HandPanFile));
 
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = HandPanAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -30,7 +30,7 @@ export const HandPan = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(HandPanAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />

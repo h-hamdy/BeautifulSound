@@ -15,8 +15,8 @@ import { MdGraphicEq } from "react-icons/md";
 
 export const Rain = () => {
   const rainAudioRef = useRef(new Audio(RainFile));
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = rainAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -30,7 +30,7 @@ export const Rain = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(rainAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />

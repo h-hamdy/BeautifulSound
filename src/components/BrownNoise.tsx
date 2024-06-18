@@ -16,8 +16,8 @@ import BrownFile from "/src/audio/brownNoise.mp4";
 export const BrownNoise = () => {
   const noiseAudioRef = useRef(new Audio(BrownFile));
 
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = noiseAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -31,7 +31,7 @@ export const BrownNoise = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(noiseAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />

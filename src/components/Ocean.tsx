@@ -15,8 +15,8 @@ import ocean from "/src/assets/ocean.png";
 export const Ocean = () => {
   const oceanAudioRef = useRef(new Audio(oceanFile));
 
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = oceanAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -31,7 +31,7 @@ export const Ocean = () => {
         <Slider
           aria-label="slider-ex-4"
           defaultValue={0}
-          onChange={(value) => handleSliderChange(oceanAudioRef, value)}
+          onChange={(value) => handleSliderChange(value)}
         >
           <SliderTrack bg="red.100">
             <SliderFilledTrack bg="tomato" />

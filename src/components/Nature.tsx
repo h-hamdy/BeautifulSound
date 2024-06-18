@@ -16,8 +16,8 @@ import nature from "/src/assets/nature.png";
 export const Nature = () => {
   const natureAudioRef = useRef(new Audio(natureFile));
 
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = natureAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -31,7 +31,7 @@ export const Nature = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(natureAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />

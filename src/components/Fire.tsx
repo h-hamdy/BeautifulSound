@@ -15,8 +15,8 @@ import fire from "/src/assets/fire.png";
 export const Fire = () => {
   const fireAudioRef = useRef(new Audio(FireFile));
 
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = fireAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -30,7 +30,7 @@ export const Fire = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(fireAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />

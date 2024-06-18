@@ -15,8 +15,8 @@ import childrenFile from "/src/audio/children.mp4";
 
 export const Children = () => {
   const childrenAudioRef = useRef(new Audio(childrenFile));
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = childrenAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -31,7 +31,7 @@ export const Children = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(childrenAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />

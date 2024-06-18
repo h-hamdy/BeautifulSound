@@ -15,8 +15,8 @@ import PeopleFile from "/src/audio/People.mp4";
 export const People = () => {
   const PeopleAudioRef = useRef(new Audio(PeopleFile));
 
-  const handleSliderChange = (audioRef: any, value: any) => {
-    const audio = audioRef.current;
+  const handleSliderChange = (value: any) => {
+    const audio = PeopleAudioRef.current;
     if (audio.paused) {
       audio.play();
     }
@@ -30,7 +30,7 @@ export const People = () => {
       <Slider
         aria-label="slider-ex-4"
         defaultValue={0}
-        onChange={(value) => handleSliderChange(PeopleAudioRef, value)}
+        onChange={(value) => handleSliderChange(value)}
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />
