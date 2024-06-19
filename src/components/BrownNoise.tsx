@@ -9,12 +9,14 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
+
 import noise from "/src/assets/logo.png";
 import BrownFile from "/src/audio/brownNoise.mp3";
 
 export const BrownNoise = () => {
   const noiseAudioRef = useRef(new Audio(BrownFile));
   const [isPlaying, setIsPlaying] = useState(false);
+  const [sliderValue, setSliderValue] = useState(0);
 
   useEffect(() => {
     const audio = noiseAudioRef.current;
@@ -44,19 +46,27 @@ export const BrownNoise = () => {
   const handleSliderChange = (value: number) => {
     const audio = noiseAudioRef.current;
     audio.volume = value / 100;
+    setSliderValue(value);
+  };
+
+  const handleCardClick = () => {
+    handlePlayAudio();
+    setSliderValue(100);
+    noiseAudioRef.current.volume = 1;
   };
 
   return (
     <Box
       className="bg-[#F6F5F4] hover:bg-[#E1DBD3] drop-shadow-lg w-[140px] h-[180px] flex flex-col justify-around p-5 rounded-lg items-center"
+      onClick={handleCardClick}
     >
       <Image src={noise} className="w-[40px]" alt="Noise" />
       <Text className="font-semibold">Brown noise</Text>
       <Slider
         aria-label="slider-ex-4"
-        defaultValue={0}
+        value={sliderValue}
         onChange={(value) => handleSliderChange(value)}
-        onMouseDown={handlePlayAudio}
+        onClick={(e) => e.stopPropagation()}  // Prevent the card click from interfering
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />
@@ -68,4 +78,3 @@ export const BrownNoise = () => {
     </Box>
   );
 };
-

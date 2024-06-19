@@ -15,6 +15,7 @@ import handpan from "/src/assets/handpan.png";
 export const HandPan = () => {
   const HandPanAudioRef = useRef(new Audio(HandPanFile));
   const [isPlaying, setIsPlaying] = useState(false);
+  const [sliderValue, setSliderValue] = useState(0);
 
   useEffect(() => {
     const audio = HandPanAudioRef.current;
@@ -44,19 +45,27 @@ export const HandPan = () => {
   const handleSliderChange = (value: number) => {
     const audio = HandPanAudioRef.current;
     audio.volume = value / 100;
+    setSliderValue(value);
+  };
+
+  const handleCardClick = () => {
+    handlePlayAudio();
+    setSliderValue(100);
+    HandPanAudioRef.current.volume = 1;
   };
 
   return (
     <Box
       className="bg-[#F6F5F4] hover:bg-[#E1DBD3] drop-shadow-lg w-[140px] h-[180px] flex flex-col justify-around p-5 rounded-lg items-center"
+      onClick={handleCardClick}
     >
-      <Image src={handpan} className="w-[40px]" alt="Hand pan" />
+      <Image src={handpan} className="w-[40px]" alt="Hand Pan" />
       <Text className="font-semibold tracking-wider">Hand pan</Text>
       <Slider
         aria-label="slider-ex-4"
-        defaultValue={0}
+        value={sliderValue}
         onChange={(value) => handleSliderChange(value)}
-        onMouseDown={handlePlayAudio}
+        onClick={(e) => e.stopPropagation()}  // Prevent the card click from interfering
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />
@@ -68,4 +77,3 @@ export const HandPan = () => {
     </Box>
   );
 };
-

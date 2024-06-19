@@ -10,11 +10,12 @@ import {
 } from "@chakra-ui/react";
 import { MdGraphicEq } from "react-icons/md";
 import RiverFile from "/src/audio/river.mp3";
-import fire from "/src/assets/river.png";
+import riverImage from "/src/assets/river.png";
 
 export const River = () => {
   const RiverAudioRef = useRef(new Audio(RiverFile));
   const [isPlaying, setIsPlaying] = useState(false);
+  const [sliderValue, setSliderValue] = useState(0);
 
   useEffect(() => {
     const audio = RiverAudioRef.current;
@@ -44,19 +45,27 @@ export const River = () => {
   const handleSliderChange = (value: number) => {
     const audio = RiverAudioRef.current;
     audio.volume = value / 100;
+    setSliderValue(value);
+  };
+
+  const handleCardClick = () => {
+    handlePlayAudio();
+    setSliderValue(100);
+    RiverAudioRef.current.volume = 1;
   };
 
   return (
     <Box
       className="bg-[#F6F5F4] hover:bg-[#E1DBD3] drop-shadow-lg w-[140px] h-[180px] flex flex-col justify-around p-5 rounded-lg items-center"
+      onClick={handleCardClick}
     >
-      <Image src={fire} className="w-[40px]" alt="Fire" />
+      <Image src={riverImage} className="w-[40px]" alt="River" />
       <Text className="font-semibold tracking-wider">River</Text>
       <Slider
         aria-label="slider-ex-4"
-        defaultValue={0}
+        value={sliderValue}
         onChange={(value) => handleSliderChange(value)}
-        onMouseDown={handlePlayAudio}
+        onClick={(e) => e.stopPropagation()}  // Prevent the card click from interfering
       >
         <SliderTrack bg="red.100">
           <SliderFilledTrack bg="tomato" />
@@ -68,3 +77,4 @@ export const River = () => {
     </Box>
   );
 };
+
