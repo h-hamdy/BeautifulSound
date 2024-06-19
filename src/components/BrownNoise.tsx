@@ -49,7 +49,6 @@ export const BrownNoise = () => {
   return (
     <Box
       className="bg-[#F6F5F4] hover:bg-[#E1DBD3] drop-shadow-lg w-[140px] h-[180px] flex flex-col justify-around p-5 rounded-lg items-center"
-      onClick={handlePlayAudio}
     >
       <Image src={noise} className="w-[40px]" alt="Noise" />
       <Text className="font-semibold">Brown noise</Text>

@@ -23,7 +23,7 @@ export const NatureSound = () => {
 
   return (
     <Flex className="flex flex-col h-screen">
-      <Box className="flex flex-col justify-center items-center p-10">
+      <Box className="flex flex-col text-center justify-center items-center p-10">
 	  <Typewriter
           textStyle={{  color: 'black', fontWeight: 700, fontSize: '2em' }}
           startDelay={200}
