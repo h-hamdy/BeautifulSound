@@ -46,6 +46,14 @@ export const River = () => {
     const audio = RiverAudioRef.current;
     audio.volume = value / 100;
     setSliderValue(value);
+
+    // Play audio if it's not already playing
+    if (!isPlaying) {
+      audio.play().catch((error) => {
+        console.error("Playback failed", error);
+      });
+      setIsPlaying(true);
+    }
   };
 
   const handleCardClick = () => {
@@ -56,7 +64,7 @@ export const River = () => {
 
   return (
     <Box
-      className="bg-[#F6F5F4] hover:bg-[#E1DBD3] drop-shadow-lg w-[140px] h-[180px] flex flex-col justify-around p-5 rounded-lg items-center"
+      className={`bg-[#F6F5F4] ${isPlaying ? "bg-[#E1DBD3]" : "hover:bg-[#E1DBD3]"} drop-shadow-lg w-[140px] h-[180px] flex flex-col justify-around p-5 rounded-lg items-center`}
       onClick={handleCardClick}
     >
       <Image src={riverImage} className="w-[40px]" alt="River" />
@@ -77,4 +85,3 @@ export const River = () => {
     </Box>
   );
 };
-

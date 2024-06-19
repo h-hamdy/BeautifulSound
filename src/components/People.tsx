@@ -46,6 +46,13 @@ export const People = () => {
     const audio = PeopleAudioRef.current;
     audio.volume = value / 100;
     setSliderValue(value);
+
+	if (!isPlaying) {
+		audio.play().catch((error) => {
+		  console.error("Playback failed", error);
+		});
+		setIsPlaying(true);
+	  }
   };
 
   const handleCardClick = () => {
