@@ -25,16 +25,26 @@ export const NatureSound = () => {
     hover: { scale: 1.1 },
   };
 
-
   return (
     <>
-	<div className={`${dark ? "bg-black" : "bg-white"} min-h-screen flex flex-col`}>
-      <button className="absolute top-4 right-4" onClick={() => setDark(!dark)}>
-        {dark ? <SunIcon color={"white"} /> : <MoonIcon />}
-      </button>
-      <div className="flex flex-col justify-center items-center flex-grow p-10">
-	  <Typewriter
-            textStyle={{ color: dark ? 'white' : 'black', fontWeight: 700, fontSize: "2em" }}
+      <div
+        className={`${
+          dark ? "bg-black" : "bg-white"
+        } min-h-screen flex flex-col`}
+      >
+        <button
+          className="absolute top-4 right-4"
+          onClick={() => setDark(!dark)}
+        >
+          {dark ? <SunIcon color={"white"} /> : <MoonIcon />}
+        </button>
+        <div className="flex flex-col justify-center items-center flex-grow p-10">
+          <Typewriter
+            textStyle={{
+              color: dark ? "white" : "black",
+              fontWeight: 700,
+              fontSize: "2em",
+            }}
             startDelay={200}
             cursorColor="white"
             multiText={[
@@ -47,39 +57,91 @@ export const NatureSound = () => {
             typeSpeed={20}
             deleteSpeed={50}
           />
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-7 p-10 w-full flex-grow">
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <Rain />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <BrownNoise />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <Fire />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <HandPan />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <People />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <Nature />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <Ocean />
+          </motion.div>
+          <motion.div
+            className="card"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <River />
+          </motion.div>
+        </div>
+        <div className="w-full flex items-center justify-center p-10">
+          <a href="https://github.com/h-hamdy">
+            <img
+              src={dark ? githubwhite : github}
+              alt="GitHub"
+              className="w-[40px] m-10 pt-16"
+            />
+          </a>
+        </div>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-7 p-10 w-full flex-grow">
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <Rain />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <BrownNoise />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <Fire />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <HandPan />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <People />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <Nature />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <Ocean />
-        </motion.div>
-        <motion.div className="card" variants={variants} initial="hidden" animate="visible" whileHover="hover">
-          <River />
-        </motion.div>
-      </div>
-      <div className="w-full flex items-center justify-center p-10">
-        <a href="https://github.com/h-hamdy">
-          <img src={dark ? githubwhite : github} alt="GitHub" className="w-[40px] m-10 pt-16" />
-        </a>
-      </div>
-    </div>
     </>
   );
 };
