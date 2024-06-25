@@ -1,4 +1,3 @@
-import { Box, Image, Flex, Button } from "@chakra-ui/react";
 import { Rain } from "./components/Rain";
 
 import github from "/src/assets/github.png";
